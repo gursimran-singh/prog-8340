@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const castSchema = mongoose.Schema({
   actors: {
-    type: Array,
+    type: [String],
     required: true,
   },
   director: {
