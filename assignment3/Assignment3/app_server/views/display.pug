@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  .container
+    h1= currentMovie.name
+    .row
+      .col-sm-10.mx-auto 
+        <br/>
+        <br/>
+        <br/>
+        .row
+          .col-sm-6.favourite
+            img(src= currentMovie.image)
+          .col-sm-6.fav-reviews 
+            .card.card-warning.review-card 
+                .card-block 
+                  h2.card-title Movie Info
+                .card-block 
+                  span.h5 Genre :  
+                  span= currentMovie.genre
+                .card-block 
+                  span.h5 Rating :  
+                  span #{currentMovie.rating}/5
+                .card-block 
+                  span.h5 Price :  
+                  span $#{currentMovie.price}
+                .card-block 
+                  span.h5 Director :  
+                  span= currentMovie.cast[0].director
+                .card-block
+                  span.h5 Actors : 
+                  ul
+                    each actor in currentMovie.cast[0].actors
+                      li= actor
+  <br>
+  <br>
+
+            

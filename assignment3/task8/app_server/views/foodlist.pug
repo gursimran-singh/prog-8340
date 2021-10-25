@@ -1,0 +1,33 @@
+extends layout
+include _includes/sharedHTMLfunctions
+
+block content
+  h1= title_content
+  p= tagline
+  <br/>
+  ul.food-list.row
+    each food in foodArray
+      li.col-sm-4
+        .card.text-white.card-has-bg.click-col(style="background-image: url("+food.image+")")
+          .card-img-overlay.d-flex.flex-column
+            .card-body
+              h4.card-title.mt-0
+                span
+                  a.text-white(href=`/foods/${food._id}`) #{food.name}
+                small.card-meta.mb-2= food.type
+              .description= food.description
+            .card-footer
+              .media
+                .media-body
+                  div.rating
+                    +outputRating(food.rating)
+                  span.badge.badge-info.price= "$"+food.price
+
+   
+
+
+
+
+
+  
+                    
