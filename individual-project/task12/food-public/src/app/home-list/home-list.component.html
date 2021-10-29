@@ -1,0 +1,31 @@
+<ul class="food-list row">
+    <li class="col-sm-4" *ngFor="let food of foods">
+        <div class="card text-white card-has-bg click-col" style="background-image:url(assets/{{food.image}})">
+            <div class="card-img-overlay d-flex flex-column">
+                <div class="card-body">
+                    <h4 class="card-title mt-0">
+                        <span>
+                            <a class="text-white" routerLink="/foods/{{food._id}}">{{food.name}}</a>
+                        </span>
+                        <small class="card-meta mb-2">{{food.type}}</small>
+                    </h4>
+                    <div class="description">{{food.description}}</div>
+                </div>
+                <div class="card-footer">
+                    <div class="media">
+                        <div class="media-body">
+                            <div class="rating">
+                                <i class="fa fa-star{{food.rating < 1 ? '-o' : ''}}"></i>
+                                <i class="fa fa-star{{food.rating < 2 ? '-o' : ''}}"></i>
+                                <i class="fa fa-star{{food.rating < 3 ? '-o' : ''}}"></i>
+                                <i class="fa fa-star{{food.rating < 4 ? '-o' : ''}}"></i>
+                                <i class="fa fa-star{{food.rating < 5 ? '-o' : ''}}"></i>
+                            </div>
+                            <span class="badge badge-info price">${{food.price}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .container
+    .clearfix 
+      h1.float-left= title
+      a(href="/new").float-right.btn.btn-danger New
+    <br/>
+
+    ul.movie-list.row
+      each movie in movieArray
+        li.col-sm-3
+          .movie-item
+            .mv-img
+              img(src=""+ movie.image +"" alt="" width="185" height="284")
+            .hvr-inner 
+              a(href=`/display/${movie._id}`) Read more
+            .title-in
+              h6
+                a(href="javascript:void(0)" tabindex="0") #{movie.name}
+              p
+                i.ion-android-star
+                  span #{movie.rating}/5
+        
+    
+

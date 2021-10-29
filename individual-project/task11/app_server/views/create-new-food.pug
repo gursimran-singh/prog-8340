@@ -1,0 +1,58 @@
+extends layout
+
+block content 
+  h1=title
+  <br/>
+  <br/>
+  .col-sm-8.mx-auto.food-form
+    .card
+      .card-header.bg-info 
+      .card-body.col-sm-10.mx-auto
+        form(method="post")
+          .form-group
+            label(for="name") Name
+            input(type="text" name="name" class="form-control" id="name" placeholder="Enter Name" required)
+          .form-group
+            label(for="type") Type
+            input(type="text" name="type" class="form-control" id="type" placeholder="Type" required)
+          .form-group
+            label(for="price") Price
+            input(type="text" name="price" class="form-control" id="price" placeholder="$" required)
+          .form-group
+            label(for="rating") Rating
+            input(type="text" name="rating" class="form-control" id="rating" placeholder="5" required)
+          .form-group
+            label(for="image") Image
+            input(type="text" name="image" class="form-control" id="image" placeholder="/images/kadai-paneer.jpeg" required)
+          .form-group
+            label(for="description") Description
+            input(type="text" name="description" class="form-control" id="description" placeholder="Description" required)
+          
+          fieldset.form-group
+            .row
+              legend.col-form-label.col-sm-3.pt-0 Review
+              .col-sm-9
+                .form-group
+                  label(for="review1_author") Author
+                  input(type="text" name="review1_author" class="form-control" id="review1_author" placeholder="Enter Name" required)
+                .form-group
+                  label(for="review1_rating") Rating
+                  input(type="text" name="review1_rating" class="form-control" id="review1_rating" placeholder="Enter Rating" required)
+                .form-group
+                  label(for="review1_reviewText") Review Text
+                  input(type="text" name="review1_reviewText" class="form-control" id="review1_reviewText" placeholder="Enter Review" required)
+          fieldset.form-group
+            .row
+              legend.col-form-label.col-sm-3.pt-0 Review
+              .col-sm-9
+                .form-group
+                  label(for="review2_author") Author
+                  input(type="text" name="review2_author" class="form-control" id="review2_author" placeholder="Enter Name" required)
+                .form-group
+                  label(for="review2_rating") Rating
+                  input(type="text" name="review2_rating" class="form-control" id="review2_rating" placeholder="Enter Rating" required)
+                .form-group
+                  label(for="review2_reviewText") Review Text
+                  input(type="text" name="review2_reviewText" class="form-control" id="review2_reviewText" placeholder="Enter Review" required)
+          .form-group 
+            button(type="submit" class="btn btn-primary") Submit

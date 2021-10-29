@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="clearfix">
+        <h1 class="float-left">{{pageContent.header.title}}</h1>
+        <a class="float-right btn btn-danger" routerLink="/list">Back</a>
+    </div>
+    <div class="row">
+        <div class="col-sm-10 mx-auto"> <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6 favourite"><img src="assets{{movie.image}}"></div>
+                <div class="col-sm-6 fav-reviews">
+                    <div class="card card-warning review-card">
+                        <div class="card-block">
+                            <h2 class="card-title">Movie Info</h2>
+                        </div>
+                        <div class="card-block"> 
+                            <span class="h5">Genre : </span>
+                            <span>{{movie.genre}}</span>
+                        </div>
+                        <div class="card-block"> 
+                            <span class="h5">Rating : </span>
+                            <span>{{movie.rating}}/5</span>
+                        </div>
+                        <div class="card-block"> 
+                            <span class="h5">Price : </span>
+                            <span>${{movie.price}}</span>
+                        </div>
+                        <div class="card-block"> 
+                            <span class="h5">Director : </span>
+                            <span>{{movie.cast[0].director}}</span>
+                        </div>
+                        <div class="card-block"><span class="h5">Actors : </span>
+                            <ul>
+                                <li *ngFor="let actor of movie.cast[0].actors">{{actor}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

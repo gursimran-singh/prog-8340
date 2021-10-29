@@ -1,0 +1,46 @@
+extends layout
+
+block content 
+  .container 
+    h1=title
+    <br/>
+    <br/>
+    .col-sm-8.mx-auto.food-form
+      .card
+        .card-header.bg-danger
+        .card-body.col-sm-10.mx-auto
+          form(method="post")
+            .form-group
+              label(for="name") Name
+              input(type="text" name="name" class="form-control" id="name" placeholder="Enter Name" required)
+            .form-group
+              label(for="genre") Genre
+              input(type="text" name="genre" class="form-control" id="genre" placeholder="genre" required)
+            .form-group
+              label(for="price") Price
+              input(type="text" name="price" class="form-control" id="price" placeholder="$" required)
+            .form-group
+              label(for="rating") Rating
+              input(type="text" name="rating" class="form-control" id="rating" placeholder="5" required)
+            .form-group
+              label(for="image") Image
+              input(type="text" name="image" class="form-control" id="image" placeholder="/images/endgame.jpg" required)
+            .form-group
+              label(for="director") Director
+              input(type="text" name="director" class="form-control" id="director" placeholder="director" required)
+            
+            fieldset.form-group
+              .row
+                legend.col-form-label.col-sm-3.pt-0 Cast
+                .col-sm-9
+                  .form-group
+                    label(for="cast1") Actor Name
+                    input(type="text" name="cast" class="form-control" id="cast1" placeholder="Actor Name" required)
+                  .form-group
+                    label(for="cast2") Actor Name
+                    input(type="text" name="cast" class="form-control" id="cast2" placeholder="Actor Name" required)
+                  .form-group
+                    label(for="cast3") Actor Name
+                    input(type="text" name="cast" class="form-control" id="cast3" placeholder="Actor Name" required)
+            .form-group 
+              button(type="submit" class="btn btn-danger") Submit

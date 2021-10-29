@@ -1,0 +1,30 @@
+<header>
+    <div class="container">
+        <nav class="navbar navbar-default navbar-custom">
+            <div class="navbar-header logo">
+                <div class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"><span
+                        class="sr-only">Toggle navigation</span>
+                    <div id="nav-icon1"><span> </span><span> </span><span></span></div>
+                </div><a href="/"><img class="logo" src="assets/images/logo1.png" alt="" width="119" height="58"></a>
+            </div>
+            <div class="navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav flex-child-men menu-left">
+                    <li class="dropdown first"><a class="btn btn-default" routerLink="/">Home</a></li>
+                    <li class="dropdown first"><a class="btn btn-default" routerLink="/list">LIST</a></li>
+                    <li class="dropdown first"><a class="btn btn-default" routerLink="/about">ABOUT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="slider movie-items">
+    <div class="container"></div>
+</div>
+<div id="content">
+    <router-outlet></router-outlet>
+</div>
+<footer>
+    <div class="container">
+        <div class="col-12 text-center"><small>© Block Buster - 2021</small></div>
+    </div>
+</footer>

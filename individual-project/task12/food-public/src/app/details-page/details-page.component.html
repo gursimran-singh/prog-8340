@@ -1,0 +1,30 @@
+<app-header [content]="pageContent.header"></app-header>
+<br />
+<br />
+<br />
+<div class="row">
+  <div class="col-sm-6 favourite"><img src="assets/{{food.image}}"></div>
+  <div class="col-sm-6 fav-reviews">
+    <div class="card card-info review-card">
+      <div class="card-block">
+        <h2 class="card-title">Customer Reviews</h2>
+        <div class="row review" *ngFor="let review of food.reviews">
+          <div class="col-12 no-gutters review-header">
+            <span class="rating">
+              <i class="fa fa-star{{review.rating < 1 ? '-o' : ''}}"></i>
+              <i class="fa fa-star{{review.rating < 2 ? '-o' : ''}}"></i>
+              <i class="fa fa-star{{review.rating < 3 ? '-o' : ''}}"></i>
+              <i class="fa fa-star{{review.rating < 4 ? '-o' : ''}}"></i>
+              <i class="fa fa-star{{review.rating < 5 ? '-o' : ''}}"></i>
+            </span>
+            <span class="reviewAuthor">{{review.author}} </span>
+            <small class="reviewTimestamp">on {{review.timestamp}}</small>
+          </div>
+          <div class="col-12">
+            <p class="comments">{{review.reviewText}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

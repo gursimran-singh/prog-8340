@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="clearfix">
+        <div class="float-left"><app-header [content]="title"></app-header></div>
+        <a class="float-right btn btn-danger" routerLink="/list">Back</a>
+    </div>
+    <br>
+    <br>
+    <div class="col-sm-8 mx-auto food-form">
+        <div class="card">
+            <div class="card-header bg-danger"></div>
+            <div class="card-body col-sm-10 mx-auto">
+                <form method="post" [formGroup]="form">
+                    <div class="form-group"><label for="name">Name</label>
+                        <input class="form-control" type="text" formControlName="name" name="name" id="name"
+                            placeholder="Enter Name" required="">
+                    </div>
+                    <div class="form-group"><label for="genre">Genre</label>
+                        <input class="form-control" type="text" formControlName="genre" name="genre" id="genre"
+                            placeholder="genre" required="">
+                    </div>
+                    <div class="form-group"><label for="price">Price</label>
+                        <input class="form-control" type="text" formControlName="price" name="price" id="price"
+                            placeholder="$" required="">
+                    </div>
+                    <div class="form-group"><label for="rating">Rating</label>
+                        <input class="form-control" type="text" formControlName="rating" name="rating" id="rating"
+                            placeholder="5" required="">
+                    </div>
+                    <div class="form-group"><label for="image">Image</label>
+                        <input class="form-control" type="text" formControlName="image" name="image" id="image"
+                            placeholder="/images/endgame.jpg" required="">
+                    </div>
+                    <div formGroupName="cast">
+                        <div class="form-group"><label for="director">Director</label>
+                            <input class="form-control" formControlName="director" type="text" name="director"
+                                id="director" placeholder="director" required="">
+                        </div>
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-3 pt-0">Cast</legend>
+                                <div class="col-sm-9">
+                                    <div class="form-group"><label for="cast1">Actor Name</label>
+                                        <input formControlName="actor1"
+                                            class="form-control" type="text" name="cast" id="cast1"
+                                            placeholder="Actor Name" required=""></div>
+                                    <div class="form-group"><label for="cast2">Actor Name</label>
+                                        <input formControlName="actor2"
+                                            class="form-control" type="text" name="cast" id="cast2"
+                                            placeholder="Actor Name" required=""></div>
+                                    <div class="form-group"><label for="cast3">Actor Name</label>
+                                        <input formControlName="actor3"
+                                            class="form-control" type="text" name="cast" id="cast3"
+                                            placeholder="Actor Name" required=""></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-group"> 
+                        <button class="btn btn-danger" [disabled]="!form.valid"
+                            (click)="onSubmit()">Submit</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

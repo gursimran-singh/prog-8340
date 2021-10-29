@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/build/styles.css')
+  body
+    nav.navbar.navbar-expand-lg.navbar-light#mainNav
+      .container.px-4.px-lg-5
+        .navbar-collapse#navbarResponsive
+          ul.navbar-nav.ms-auto.py-4.py-lg-0
+            li.nav-item
+              a.nav-link.px-lg-3.py-3.py-lg-4(href="/") Home
+            //- li.nav-item
+            //-   a.nav-link.px-lg-3.py-3.py-lg-4(href="/list") List
+            //- li.nav-item
+            //-   a.nav-link.px-lg-3.py-3.py-lg-4(href="/favourite") Favourite
+    
+    header.masthead(style="background-image: url('/images/home-bg.jpg')")
+      .container.position-relative.px-4.px-lg-5
+          .row.gx-4.gx-lg-5.justify-content-center
+            .col-md-10.col-lg-8.col-xl-7
+              .site-heading
+                h1 &nbsp;
+                  span.subheading &nbsp;
+                        
+              
+    .container
+      #content
+        block content
+    footer
+      div
+        .col-12
+          small &copy; Gursimran Singh - Fall 2021 - 8716325
+
+    block scripts
+      script(src='/build/main.js')
+      script(src='/build/polyfills.js')
+      script(src='/build/runtime.js')

@@ -1,0 +1,65 @@
+<h1>Create New Food</h1>
+<br />
+<br />
+<div class="col-sm-8 mx-auto food-form">
+    <div class="card">
+        <div class="card-header bg-info"> </div>
+        <div class="card-body col-sm-10 mx-auto">
+            <form (ngSubmit)="createNewFood(newFood)">
+                <div class="form-group"><label for="name">Name</label>
+                    <input class="form-control" type="text" [(ngModel)]="newFood.name"
+                        name="name" id="name" placeholder="Enter Name" required></div>
+                <div class="form-group"><label for="type">Type</label>
+                    <input class="form-control" type="text" [(ngModel)]="newFood.type"
+                        name="type" id="type" placeholder="Type" required></div>
+                <div class="form-group"><label for="price">Price</label>
+                    <input class="form-control" type="text" [(ngModel)]="newFood.price"
+                        name="price" id="price" placeholder="$" required=""></div>
+                <div class="form-group"><label for="rating">Rating</label>
+                    <input class="form-control" type="text" [(ngModel)]="newFood.rating"
+                        name="rating" id="rating" placeholder="5" required=""></div>
+                <div class="form-group"><label for="image">Image</label>
+                    <input class="form-control" type="text" [(ngModel)]="newFood.image"
+                        name="image" id="image" placeholder="/images/kadai-paneer.jpeg" required=""></div>
+                <div class="form-group"><label for="description">Description</label>
+                    <input class="form-control" [(ngModel)]="newFood.description"
+                        type="text" name="description" id="description" placeholder="Description" required=""></div>
+                <div [formGroup]="reviewForm">
+                        <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-3 pt-0">Review</legend>
+                        <div class="col-sm-9">
+                            <div class="form-group"><label for="review1_author">Author</label><input formControlName="author1"
+                                    class="form-control" type="text" name="review1_author" id="review1_author"
+                                    placeholder="Enter Name" required=""></div>
+                            <div class="form-group"><label for="review1_rating">Rating</label><input formControlName="rating1"
+                                    class="form-control" type="text" name="review1_rating" id="review1_rating"
+                                    placeholder="Enter Rating" required=""></div>
+                            <div class="form-group"><label for="review1_reviewText">Review Text</label><input formControlName="reviewText1"
+                                    class="form-control" type="text" name="review1_reviewText" id="review1_reviewText"
+                                    placeholder="Enter Review" required=""></div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-3 pt-0">Review</legend>
+                        <div class="col-sm-9">
+                            <div class="form-group"><label for="review2_author">Author</label><input formControlName="author2"
+                                    class="form-control" type="text" name="review2_author" id="review2_author"
+                                    placeholder="Enter Name" required=""></div>
+                            <div class="form-group"><label for="review2_rating">Rating</label><input formControlName="rating2"
+                                    class="form-control" type="text" name="review2_rating" id="review2_rating"
+                                    placeholder="Enter Rating" required=""></div>
+                            <div class="form-group"><label for="review2_reviewText">Review Text</label><input formControlName="reviewText2"
+                                    class="form-control" type="text" name="review2_reviewText" id="review2_reviewText"
+                                    placeholder="Enter Review" required=""></div>
+                        </div>
+                    </div>
+                </fieldset>
+                </div>
+                <div class="form-group"> <button class="btn btn-primary" type="submit">Submit</button></div>
+            </form>
+        </div>
+    </div>
+</div>

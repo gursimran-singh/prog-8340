@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="clearfix">
+        <h1 class="float-left">Movie List</h1>
+        <a class="float-right btn btn-danger" routerLink="/new">New</a>
+    </div><br>
+    <ul class="movie-list row">
+        <li class="col-sm-3" *ngFor="let movie of movies">
+            <div class="movie-item">
+                <div class="mv-img"><img src="assets{{movie.image}}" alt="" width="185" height="284"></div>
+                <div class="controls">
+                    <a class="update-movie" routerLink="/update/{{movie._id}}">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a class="delete-movie" (click)="deleteMovie(movie._id, movie.name)">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </div>
+                <div class="hvr-inner"> <a routerLink="/display/{{movie._id}}">Read more</a></div>
+                <div class="title-in">
+                    <h6><a href="javascript:void(0)" tabindex="0">{{movie.name}}</a></h6>
+                    <p><i class="ion-android-star"><span>{{movie.rating}}/5</span></i></p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
